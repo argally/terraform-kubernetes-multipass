@@ -44,7 +44,8 @@ write_files:
       ip_vs_wrr
       ip_vs_sh
       nf_conntrack_ipv4
-  - path: /etc/syctl.conf
+      br_netfilter
+  - path: /etc/sysctl.d/kubernetes.conf
     content: |
       net.ipv4.ip_forward=1
       net.bridge.bridge-nf-call-ip6tables=1
@@ -64,6 +65,7 @@ write_files:
         "storage-driver": "overlay2"
         }
 runcmd:
+- modprobe br_netfilter
 - sysctl -p
 - systemctl daemon-reload
 - systemctl restart docker kubelet
