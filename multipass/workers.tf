@@ -45,7 +45,7 @@ resource "null_resource" "workers-node_labels" {
   }
   provisioner "remote-exec" {
     inline = [
-      "kubectl label node worker-${count.index} worker_group=worker kubernetes.io/role=worker"
+      "kubectl label --overwrite node worker-${count.index} worker_group=managed kubernetes.io/role=worker"
     ]
   }
   count = var.workers >= 1 ? var.workers : 0

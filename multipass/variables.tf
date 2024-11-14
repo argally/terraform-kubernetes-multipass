@@ -24,7 +24,7 @@ variable "workers" {
   description = "Number of worker nodes"
 }
 variable "kube_version" {
-  default     = "1.28.2-1.1"
+  default     = "1.30.2-1.1"
   type        = string
   description = "Version of Kubernetes to use"
 }
