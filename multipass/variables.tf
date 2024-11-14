@@ -19,7 +19,7 @@ variable "masters" {
   description = "Number of control plane nodes"
 }
 variable "workers" {
-  default     = 3
+  default     = 1
   type        = number
   description = "Number of worker nodes"
 }
