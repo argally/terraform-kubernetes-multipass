@@ -13,6 +13,21 @@ variable "cpu" {
   type        = number
   description = "Number of CPU assigned to vms"
 }
+variable "disk_worker" {
+  default     = "30G"
+  type        = string
+  description = "Disk size assigned to vms"
+}
+variable "mem_worker" {
+  default     = "3G"
+  type        = string
+  description = "Memory assigned to vms"
+}
+variable "cpu_worker" {
+  default     = 3
+  type        = number
+  description = "Number of CPU assigned to vms"
+}
 variable "masters" {
   default     = 1
   type        = number

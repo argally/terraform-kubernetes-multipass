@@ -39,9 +39,9 @@ data "external" "workers" {
   program = ["python3", "${path.module}/script/multipass.py"]
   query = {
     name = "worker-${count.index}"
-    cpu  = var.cpu
-    mem  = var.mem
-    disk = var.disk
+    cpu  = var.cpu_worker
+    mem  = var.mem_worker
+    disk = var.disk_worker
     init = local_file.cloud_init_workers.content
   }
   count      = var.workers >= 1 ? var.workers : 0
