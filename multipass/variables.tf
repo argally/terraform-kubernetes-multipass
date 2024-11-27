@@ -1,15 +1,15 @@
 variable "disk" {
-  default     = "10G"
+  default     = "15G"
   type        = string
   description = "Disk size assigned to vms"
 }
 variable "mem" {
-  default     = "2G"
+  default     = "3G"
   type        = string
   description = "Memory assigned to vms"
 }
 variable "cpu" {
-  default     = 2
+  default     = 3
   type        = number
   description = "Number of CPU assigned to vms"
 }
