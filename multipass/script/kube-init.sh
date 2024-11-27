@@ -39,4 +39,5 @@ sed -i -e 's/host: 127.0.0.1/host: 0.0.0.0/' /etc/kubernetes/manifests/kube-sche
 sed -i -e 's/127.0.0.1:2381/0.0.0.0:2381/' /etc/kubernetes/manifests/etcd.yaml
 sed -i -e 's/--bind-address=127.0.0.1/--bind-address=0.0.0.0/' /etc/kubernetes/manifests/kube-controller-manager.yaml
 sed -i -e 's/host: 127.0.0.1/host: 0.0.0.0/' /etc/kubernetes/manifests/kube-controller-manager.yaml
-sleep 5
+echo "*** Sleep 60s"
+sleep 60
