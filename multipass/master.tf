@@ -31,7 +31,7 @@ CMD
 
   provisioner "remote-exec" {
     inline = [
-      "kubectl -n kube-system patch ds kube-proxy -p '{\"spec\":{\"template\":{\"metadata\":{\"labels\":{\"updateTime\":\"`date +'%s'`\\'}}}}}"
+      "kubectl -n kube-system patch ds kube-proxy -p '{\"spec\":{\"template\":{\"metadata\":{\"labels\":{\"updateTime\":\"`date +'%s'`\\\"}}}}'"
     ]
   }
   count = 1
