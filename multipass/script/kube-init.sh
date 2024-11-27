@@ -41,5 +41,7 @@ sed -i -e 's/--bind-address=127.0.0.1/--bind-address=0.0.0.0/' /etc/kubernetes/m
 sed -i -e 's/host: 127.0.0.1/host: 0.0.0.0/' /etc/kubernetes/manifests/kube-controller-manager.yaml
 sleep 5
 echo "*** Bind Kube-proxy 0.0.0.0 Metrics address:"
-kubectl -n kube-system get cm kube-proxy -o yaml |sed 's/metricsBindAddress: "0.0.0.0:10248"/metricsBindAddress: "0.0.0.0:10249"/' | kubectl apply -f -
+kubectl -n kube-system get cm kube-proxy -o yaml |sed 's/metricsBindAddress: ""/metricsBindAddress: "0.0.0.0:10249"/' | kubectl apply -f -
+sleep 5
+echo "*** Force restart Kube-proxy Daemonset:"
 kubectl -n kube-system patch ds kube-proxy -p "{\"spec\":{\"template\":{\"metadata\":{\"labels\":{\"updateTime\":\"`date +'%s'`\"}}}}}"
