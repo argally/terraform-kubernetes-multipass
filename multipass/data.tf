@@ -2,9 +2,9 @@ data "external" "haproxy" {
   program = ["python3", "${path.module}/script/multipass.py"]
   query = {
     name = "haproxy"
-    cpu  = var.cpu
-    mem  = var.mem
-    disk = var.disk
+    cpu  = var.cpu_haproxy
+    mem  = var.mem_haproxy
+    disk = var.disk_haproxy
     init = local_file.cloud_init_haproxy.content
   }
 }

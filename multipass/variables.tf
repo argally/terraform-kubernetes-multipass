@@ -13,6 +13,21 @@ variable "cpu" {
   type        = number
   description = "Number of CPU assigned to vms"
 }
+variable "disk_haproxy" {
+  default     = "10G"
+  type        = string
+  description = "Disk size assigned to vms"
+}
+variable "mem_haproxy" {
+  default     = "2G"
+  type        = string
+  description = "Memory assigned to vms"
+}
+variable "cpu_haproxy" {
+  default     = 2
+  type        = number
+  description = "Number of CPU assigned to vms"
+}
 variable "disk_worker" {
   default     = "30G"
   type        = string
