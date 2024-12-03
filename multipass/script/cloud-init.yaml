@@ -89,3 +89,4 @@ runcmd:
 - echo ${haproxy_ip} > /tmp/haproxy_ip
 - touch /tmp/signal
 - systemctl restart ntp
+- systemctl restart kubelet
